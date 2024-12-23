@@ -8,7 +8,7 @@
 {% block content %}
     <header class="navbar">
         <div class="container">
-            <h1><a href="/">ShopNest</a></h1>
+            <h1><a href="{% url 'home' %}">ShopNest</a></h1>
         </div>
     </header>
 
@@ -40,5 +40,6 @@
     <footer>
         <p>&copy; 2024 ShopNest. Todos os direitos reservados.</p>
     </footer>
-    </body>
+
+    <script src="{% static 'auth/js/registro.js' %}"></script>
 {% endblock %}

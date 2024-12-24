@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.shortcuts import redirect
+from django.contrib import auth
+from django.contrib.auth.decorators import login_required
 
-#TODO Trabalhar na autenticação (Verificacoes, login e rediricionamento) USAR DJANGO.CONTRIB.AUTH
 def registro(request):
     if request.method == 'GET':
         return render(request, 'registro.html')
@@ -36,3 +37,17 @@ def registro(request):
 def logar(request):
     if request.method == 'GET':
         return render(request, 'logar.html')
+    elif request.method == 'POST':
+        nome = request.POST.get('nome')
+        senha = request.POST.get('senha')
+        user = auth.authenticate(request, username=nome, password=senha)
+        
+        if user:
+            auth.login(request, user)
+            return redirect('/')
+        return redirect('/auth/logar/?error=login_error')
+    
+@login_required(login_url='/auth/registro/')
+def sair(request):
+    auth.logout(request)
+    return redirect('/auth/logar/?status=logout')

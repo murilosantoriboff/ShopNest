@@ -23,7 +23,8 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('users_auth.urls')),
-    path('', views.home, name='home')
+    path('', views.home, name='home'),
+    path('perfil_user/', views.perfil_usuario, name='perfil_user')
 ]
 
 # Apenas no ambiente de desenvolvimento, o Django serve os arquivos estáticos e de mídia

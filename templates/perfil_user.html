@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Perfil
+{% endblock %}
+
+{% block addcss %}<link rel="stylesheet" href="{% static 'base/css/perfil_user.css' %}">{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <!-- Cabeçalho do Perfil -->
+        <div class="profile-header">
+            <!-- Foto de Perfil -->
+            <a href="{% url 'home' %}" class="login-btn">Voltar</a>
+            <div class="info-basics-user">
+                <h2>Nome do Usuário</h2>
+                <p>nomeusuario@email.com</p>
+            </div>
+        </div>
+
+        <!-- Informações do Perfil -->
+        <div class="profile-info">
+            <h3>Informações Pessoais</h3>
+            <div class="info-item">
+                <label>Endereço:</label>
+                <span>Rua Exemplo, 123, Bairro, Cidade, Estado</span>
+            </div>
+            <div class="info-item">
+                <label>Telefone:</label>
+                <span>(11) 98765-4321</span>
+            </div>
+            <div class="info-item">
+                <label>Data de Nascimento:</label>
+                <span>01/01/1990</span>
+            </div>
+        </div>
+
+        <!-- Histórico de Compras e Vendas -->
+        <div class="history-section">
+            <h3>Histórico de Compras/Vendas</h3>
+            <ul class="history-list">
+                <li>Compra de Produto X - R$ 150,00 - Data: 22/12/2023</li>
+                <li>Venda de Produto Y - R$ 200,00 - Data: 10/12/2023</li>
+                <li>Compra de Produto Z - R$ 350,00 - Data: 05/11/2023</li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}

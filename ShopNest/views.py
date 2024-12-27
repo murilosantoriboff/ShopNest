@@ -10,4 +10,4 @@ def home(request):
 
 #TODO Perfil de usuario
 def perfil_usuario(request):
-    return HttpResponse('Perfil do usuario')
+    return render(request, 'perfil_user.html')

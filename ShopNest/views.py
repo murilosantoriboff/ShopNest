@@ -8,6 +8,7 @@ from django.http import HttpResponse
 def home(request):
     return render(request, 'home.html')
 
+@login_required(login_url='/auth/registro/')
 def perfil_usuario(request):
-    #TODO Filtrar dados do usuario e mandar para a pagina de perfil
-    return render(request, 'perfil_user.html')
+    usuario_logado = request.user
+    return render(request, 'perfil_user.html', {'usuario':usuario_logado})

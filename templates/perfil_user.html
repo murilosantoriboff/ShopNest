@@ -14,29 +14,12 @@ Perfil
             <!-- Foto de Perfil -->
             <a href="{% url 'home' %}" class="login-btn">Voltar</a>
             <div class="info-basics-user">
-                <h2>Nome do Usuário</h2>
-                <p>nomeusuario@email.com</p>
+                <h2>{{ usuario.username }}</h2>
+                <p>{{ usuario.email }}</p>
             </div>
         </div>
 
-        <!-- Informações do Perfil -->
-        <div class="profile-info">
-            <h3>Informações Pessoais</h3>
-            <div class="info-item">
-                <label>Endereço:</label>
-                <span>Rua Exemplo, 123, Bairro, Cidade, Estado</span>
-            </div>
-            <div class="info-item">
-                <label>Telefone:</label>
-                <span>(11) 98765-4321</span>
-            </div>
-            <div class="info-item">
-                <label>Data de Nascimento:</label>
-                <span>01/01/1990</span>
-            </div>
-        </div>
-
-        <!-- Histórico de Compras e Vendas -->
+        <!-- TODO Histórico de Compras e Vendas - Vincular com as models que irei fazer -->
         <div class="history-section">
             <h3>Histórico de Compras/Vendas</h3>
             <ul class="history-list">
